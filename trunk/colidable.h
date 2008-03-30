@@ -3,10 +3,12 @@
 class colidable
 {
 public:
-	  point upperleft;
-	  point upperright;
-	  point bottomleft;
-	  point bottomright;
+	colidable();
+	
+	point upperleft;
+	point upperright;
+	point bottomleft;
+	point bottomright;
 	  
-	  bool density;
+	bool density;
 };

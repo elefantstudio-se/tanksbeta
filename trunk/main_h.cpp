@@ -2,6 +2,7 @@
 #include "allegro.h"
 #include "sprite.h"
 #include "box.h"
+
 #include "colidable.h"
 
 
@@ -9,13 +10,12 @@ void allegro();
 
 const int screen_w = 1024;
 const int screen_h = 768;
+
 int ticks=0;
 
-void ticker(){
-ticks++;
-}END_OF_FUNCTION(ticker)
-
-
+void ticker() {
+	 ticks++;
+} END_OF_FUNCTION(ticker)
 
 int main(){
 	allegro();
@@ -23,10 +23,10 @@ int main(){
 	
 	BITMAP *buffer = create_bitmap(screen_w, screen_h);
 	BITMAP *bg = load_bitmap("bg.bmp",0);
-	
-	
-	
-	
+
+	//colidable colide_box;
+	//colide_box.density = true;
+	//colide_box.upperleft = new point(0, 2);
 	
 	//create objects of class sprite
 	sprite tank;
@@ -57,9 +57,8 @@ int main(){
 	int fps =0;
 	int didticks = 0;
 		
-		
-	
-	while(!key[KEY_ESC]){
+
+	while(!key[KEY_ESC]) {
 
 	
 		ntick=ticks;
