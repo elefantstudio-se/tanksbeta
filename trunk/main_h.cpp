@@ -4,6 +4,7 @@
 #include "box.h"
 
 #include "collision.h"
+#include "directions.h"
 
 
 void allegro();
@@ -46,6 +47,12 @@ int main(){
 	
 	block.x = 50;
 	block.y = 400;
+	
+	collidable bounds;
+	bounds.upperleft = point(block.x, block.y);
+	bounds.bottomright = point(block.x + 50, block.y + 50);
+	
+	collis.objects[0] = bounds;
 	
 
 	LOCK_VARIABLE(yicks);
@@ -94,25 +101,38 @@ int main(){
 			}
 
 	
-			else if(key[KEY_W]){
-				tank.direction = 0;
-				tank.move_y(-3);
+			else if(key[KEY_W]) {
+				// If the check collision function doesn't find any collisions... (false - ok)
+				if( collis.check_collision( tank, -3, NORTH ) == false )
+				{
+					tank.direction = 0;
+					tank.move_y(-3);
+				}
 			} 
 		
-			else if(key[KEY_S]){
-				tank.direction = 128;
-				tank.move_y(3);
+			else if(key[KEY_S]) {
+				if( collis.check_collision( tank, 3, SOUTH ) == false )
+				{
+					tank.direction = 128;
+					tank.move_y(3);
+				}
 			}
 	
 	
-			else if(key[KEY_D]){
-				tank.direction = 64;
-				tank.move_x(3);
+			else if(key[KEY_D]) {
+				if( collis.check_collision( tank, 3, EAST ) == false )
+				{
+					tank.direction = 64;
+					tank.move_x(3);
+				}
 			}
 
-			else if(key[KEY_A]){
-				tank.direction = 192;
-				tank.move_x(-3);
+			else if(key[KEY_A]) {
+				if( collis.check_collision( tank, 3, WEST ) == false )
+				{
+					tank.direction = 192;
+					tank.move_x(-3);
+				}
 			}
 
 			
@@ -132,7 +152,9 @@ int main(){
 			textprintf(buffer, font, 0, 10, makecol(255, 255, 255),  "x: %.0f", tank.x);
 			textprintf(buffer, font, 50, 10, makecol(255, 255, 255),  "y: %.0f", tank.y);
 			
-			//textprintf(buffer, font, 0, 20, makecol(255, 255, 255), "sizeof: %i", );
+			textprintf(buffer, font, 0, 20, makecol(255, 255, 255), "sizeof: %i", sizeof( collis.objects) );
+			textprintf(buffer, font, 0, 30, makecol(255, 255, 255), "upperleft[0]: %i", collis.objects[0].upperleft.y );
+			textprintf(buffer, font, 0, 40, makecol(255, 255, 255), "tank.y: %i", (int)tank.y );
 			
 			didticks++;
 			
