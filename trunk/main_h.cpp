@@ -1,7 +1,8 @@
 #include <math.h> 
-#include"allegro.h"
+#include "allegro.h"
 #include "sprite.h"
 #include "box.h"
+#include "colidable.h"
 
 
 void allegro();

@@ -1,5 +1,3 @@
-#include "point.h"
-
 class box
 {
 

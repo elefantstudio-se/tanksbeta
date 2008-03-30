@@ -1,6 +1,8 @@
 class point
 {
- 	   int x, int y;
+
+public:
+ 	   int x, y;
 	   
-	   point( int new_x, int new_y) { this.x = new_x; this.y = new_y };
+	   point( int new_x, int new_y) { x = new_x;}
 };

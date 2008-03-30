@@ -1,4 +1,4 @@
-class sprite{
+class sprite {
 
 public:
 

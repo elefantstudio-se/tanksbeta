@@ -1,3 +1,5 @@
+#include "point.h"
+
 class colidable
 {
 public:
