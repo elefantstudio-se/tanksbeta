@@ -1,7 +1,7 @@
 [Project]
 FileName=tanks.dev
 Name=tanks
-UnitCount=8
+UnitCount=11
 Type=0
 Ver=1
 ObjFiles=
@@ -12,13 +12,13 @@ ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
-Linker=-lalleg
+Linker=-lalleg_@@_
 IsCpp=1
 Icon=tanks.ico
 ExeOutput=
 ObjectOutput=
 OverrideOutput=0
-OverrideOutputName=
+OverrideOutputName=tanks.exe
 HostApplication=
 Folders=headers,source
 CommandLine=
@@ -27,7 +27,7 @@ CustomMakefile=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=
+CompilerSettings=0000000000000000000000
 
 [Unit1]
 FileName=..\main_h.cpp
@@ -98,7 +98,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=..\colidable.h
+FileName=..\collidable.h
 CompileCpp=1
 Folder=headers
 Compile=1
@@ -108,7 +108,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=..\colidable.cpp
+FileName=..\collidable.cpp
 CompileCpp=1
 Folder=source
 Compile=1
@@ -121,6 +121,36 @@ BuildCmd=
 FileName=..\point.cpp
 CompileCpp=1
 Folder=source
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=..\collision.h
+CompileCpp=1
+Folder=headers
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit10]
+FileName=..\collision.cpp
+CompileCpp=1
+Folder=source
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit11]
+FileName=..\directions.h
+CompileCpp=1
+Folder=headers
 Compile=1
 Link=1
 Priority=1000

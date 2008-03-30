@@ -5,9 +5,9 @@ CPP  = g++.exe
 CC   = gcc.exe
 WINDRES = windres.exe
 RES  = tanks_private.res
-OBJ  = ../main_h.o ../sprite.o ../colidable.o ../point.o $(RES)
-LINKOBJ  = ../main_h.o ../sprite.o ../colidable.o ../point.o $(RES)
-LIBS =  -L"C:/Dev-Cpp/lib" -mwindows -lalleg 
+OBJ  = ../main_h.o ../sprite.o ../collidable.o ../point.o ../collision.o $(RES)
+LINKOBJ  = ../main_h.o ../sprite.o ../collidable.o ../point.o ../collision.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -mwindows -lalleg  
 INCS =  -I"C:/Dev-Cpp/include" 
 CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
 BIN  = tanks.exe
@@ -32,11 +32,14 @@ $(BIN): $(OBJ)
 ../sprite.o: ../sprite.cpp
 	$(CPP) -c ../sprite.cpp -o ../sprite.o $(CXXFLAGS)
 
-../colidable.o: ../colidable.cpp
-	$(CPP) -c ../colidable.cpp -o ../colidable.o $(CXXFLAGS)
+../collidable.o: ../collidable.cpp
+	$(CPP) -c ../collidable.cpp -o ../collidable.o $(CXXFLAGS)
 
 ../point.o: ../point.cpp
 	$(CPP) -c ../point.cpp -o ../point.o $(CXXFLAGS)
+
+../collision.o: ../collision.cpp
+	$(CPP) -c ../collision.cpp -o ../collision.o $(CXXFLAGS)
 
 tanks_private.res: tanks_private.rc 
 	$(WINDRES) -i tanks_private.rc --input-format=rc -o tanks_private.res -O coff 

@@ -1,33 +1,33 @@
-#include <math.h> 
+#include <math.h>
 
 #include "allegro.h"
+#include "sprite.h"
 #include "box.h"
-
-#include "collision.h"
+#include "collidable.h"
 
 
 void allegro();
 
 const int screen_w = 1024;
 const int screen_h = 768;
-
 int ticks=0;
 
-void ticker() {
-	 ticks++;
-} END_OF_FUNCTION(ticker)
+void ticker(){
+ticks++;
+}END_OF_FUNCTION(ticker)
+
+
 
 int main(){
 	allegro();
 	
-	collision collis;
 	
 	BITMAP *buffer = create_bitmap(screen_w, screen_h);
 	BITMAP *bg = load_bitmap("bg.bmp",0);
-
-	//colidable colide_box;
-	//colide_box.density = true;
-	//colide_box.upperleft = new point(0, 2);
+	
+	
+	
+	
 	
 	//create objects of class sprite
 	sprite tank;
@@ -47,6 +47,7 @@ int main(){
 	block.x = 50;
 	block.y = 400;
 	
+	collidable bounds;
 
 	LOCK_VARIABLE(yicks);
 	LOCK_FUNCTION(ticker);
@@ -58,8 +59,9 @@ int main(){
 	int fps =0;
 	int didticks = 0;
 		
-
-	while(!key[KEY_ESC]) {
+		
+	
+	while(!key[KEY_ESC]){
 
 	
 		ntick=ticks;
@@ -94,7 +96,8 @@ int main(){
 			}
 
 	
-			else if(key[KEY_W]){
+			else if(key[KEY_W])
+			{
 				tank.direction = 0;
 				tank.move_y(-3);
 			} 
@@ -123,17 +126,14 @@ int main(){
 		
 			// draw the tank body and cannon at the updated x,y
 			blit(bg, buffer,0,0,0,0,screen_w,screen_h);
-			rotate_sprite(buffer, tank.bmp, (int)tank.x, (int)tank.y ,ftofix(tank.direction));
+			rotate_sprite(buffer, tank.bmp, tank.x, tank.y ,ftofix(tank.direction));
 			draw_sprite(buffer, block.bmp, block.x, block.y);
-			rotate_sprite(buffer, tank_cannon.bmp, (int)tank.x, (int)tank.y ,ftofix(tank_cannon.direction));
+			rotate_sprite(buffer, tank_cannon.bmp, tank.x, tank.y ,ftofix(tank_cannon.direction));
 			draw_sprite(buffer, crosshair.bmp, (mouse_x-10), (mouse_y-10));
 			
 			//print the value of x,y
 			textprintf(buffer, font, 0, 10, makecol(255, 255, 255),  "x: %.0f", tank.x);
 			textprintf(buffer, font, 50, 10, makecol(255, 255, 255),  "y: %.0f", tank.y);
-			
-			//textprintf(buffer, font, 0, 20, makecol(255, 255, 255), "sizeof: %i", );
-			
 			didticks++;
 			
 			if(didticks==60){

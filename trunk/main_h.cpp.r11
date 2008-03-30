@@ -1,9 +1,9 @@
 #include <math.h> 
-
 #include "allegro.h"
+#include "sprite.h"
 #include "box.h"
 
-#include "collision.h"
+#include "colidable.h"
 
 
 void allegro();
@@ -20,7 +20,6 @@ void ticker() {
 int main(){
 	allegro();
 	
-	collision collis;
 	
 	BITMAP *buffer = create_bitmap(screen_w, screen_h);
 	BITMAP *bg = load_bitmap("bg.bmp",0);
@@ -123,17 +122,14 @@ int main(){
 		
 			// draw the tank body and cannon at the updated x,y
 			blit(bg, buffer,0,0,0,0,screen_w,screen_h);
-			rotate_sprite(buffer, tank.bmp, (int)tank.x, (int)tank.y ,ftofix(tank.direction));
+			rotate_sprite(buffer, tank.bmp, tank.x, tank.y ,ftofix(tank.direction));
 			draw_sprite(buffer, block.bmp, block.x, block.y);
-			rotate_sprite(buffer, tank_cannon.bmp, (int)tank.x, (int)tank.y ,ftofix(tank_cannon.direction));
+			rotate_sprite(buffer, tank_cannon.bmp, tank.x, tank.y ,ftofix(tank_cannon.direction));
 			draw_sprite(buffer, crosshair.bmp, (mouse_x-10), (mouse_y-10));
 			
 			//print the value of x,y
 			textprintf(buffer, font, 0, 10, makecol(255, 255, 255),  "x: %.0f", tank.x);
 			textprintf(buffer, font, 50, 10, makecol(255, 255, 255),  "y: %.0f", tank.y);
-			
-			//textprintf(buffer, font, 0, 20, makecol(255, 255, 255), "sizeof: %i", );
-			
 			didticks++;
 			
 			if(didticks==60){
