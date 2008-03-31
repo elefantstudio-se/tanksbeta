@@ -64,6 +64,7 @@ int main(){
 	int frames = 0;
 	int fps =0;
 	int didticks = 0;
+
 		
 
 	while(!key[KEY_ESC]) {
@@ -154,8 +155,8 @@ int main(){
 			
 			textprintf(buffer, font, 0, 20, makecol(255, 255, 255), "sizeof: %i", sizeof( collis.objects) );
 			textprintf(buffer, font, 0, 30, makecol(255, 255, 255), "upperleft[0]: %i", collis.objects[0].upperleft.y );
-			textprintf(buffer, font, 0, 40, makecol(255, 255, 255), "tank.y: %i", (int)tank.y );
-			
+			collis.draw(buffer);
+
 			didticks++;
 			
 			if(didticks==60){

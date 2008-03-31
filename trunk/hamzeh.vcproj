@@ -153,7 +153,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\collidable.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\collision.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\main_h.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\point.cpp"
 				>
 			</File>
 			<File
@@ -167,7 +179,19 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\Box.h"
+				RelativePath=".\collidable.h"
+				>
+			</File>
+			<File
+				RelativePath=".\collision.h"
+				>
+			</File>
+			<File
+				RelativePath=".\directions.h"
+				>
+			</File>
+			<File
+				RelativePath=".\point.h"
 				>
 			</File>
 			<File

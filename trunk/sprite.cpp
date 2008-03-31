@@ -4,7 +4,7 @@
 const int screen_w = 1024;
 const int screen_h = 768;
 
-void sprite::move_x(float velocity_x){
+void sprite::move_x(float velocity_x) {
 	
 	if(x+velocity_x>-7 && x+velocity_x < screen_w-43)
 		x+=velocity_x;

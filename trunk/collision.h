@@ -16,5 +16,5 @@ class collision
 		void draw(BITMAP *buffer);
 		
 	private:
-		static const bool draw_bounds = true;
+		static const bool draw_bounds = false;
 };

@@ -23,13 +23,19 @@ bool collision::check_collision(sprite test_object, int speed, int direction)
 	{
 		if( direction == NORTH )
 		{			
-			if(	(int)test_object.y + speed < objects[i].bottomright.y && (int)test_object.y > objects[i].upperleft.y && ((int)test_object.x >= objects[i].upperleft.x && (int)test_object.x <= objects[i].bottomright.x) )
+			if(	(int)test_object.y + speed < objects[i].bottomright.y &&
+				(int)test_object.y > objects[i].upperleft.y &&
+				((int)test_object.x >= objects[i].upperleft.x &&
+				(int)test_object.x <= objects[i].bottomright.x) )
 				return true;
 		}
 		
 		if( direction == SOUTH )
 		{
-			if(	((int)test_object.y + 40) + speed > objects[i].upperleft.y && (int)test_object.y < objects[i].bottomright.y && ((int)test_object.x >= objects[i].upperleft.x && (int)test_object.x <= objects[i].bottomright.x) )
+			if(	((int)test_object.y + 40) + speed > objects[i].upperleft.y && 
+				(int)test_object.y < objects[i].bottomright.y && 
+				((int)test_object.x >= objects[i].upperleft.x && 
+				(int)test_object.x <= objects[i].bottomright.x) )
 				return true;	
 		}
 		
