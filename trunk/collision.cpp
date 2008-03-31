@@ -1,4 +1,4 @@
-#include "collision.h"
+/*#include "collision.h"
 #include "directions.h"
 #include <iostream>
 
@@ -52,3 +52,4 @@ bool collision::check_collision(sprite test_object, int speed, int direction)
 		
 	return false;
 }
+*/

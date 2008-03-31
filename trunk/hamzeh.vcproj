@@ -153,51 +153,107 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\collidable.cpp"
+				RelativePath=".\main.cpp"
 				>
 			</File>
-			<File
-				RelativePath=".\collision.cpp"
+			<Filter
+				Name="misc"
 				>
-			</File>
-			<File
-				RelativePath=".\main_h.cpp"
+				<File
+					RelativePath=".\timer.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="collision"
 				>
-			</File>
-			<File
-				RelativePath=".\point.cpp"
+				<File
+					RelativePath=".\box.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\collision.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\map_object.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\point.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\rect.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="player"
 				>
-			</File>
-			<File
-				RelativePath=".\sprite.cpp"
-				>
-			</File>
+				<File
+					RelativePath=".\sprite.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\tank.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File
-				RelativePath=".\collidable.h"
+			<Filter
+				Name="collison"
 				>
-			</File>
-			<File
-				RelativePath=".\collision.h"
+				<File
+					RelativePath=".\box.h"
+					>
+				</File>
+				<File
+					RelativePath=".\collision.h"
+					>
+				</File>
+				<File
+					RelativePath=".\map_object.h"
+					>
+				</File>
+				<File
+					RelativePath=".\point.h"
+					>
+				</File>
+				<File
+					RelativePath=".\rect.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="misc"
 				>
-			</File>
-			<File
-				RelativePath=".\directions.h"
+				<File
+					RelativePath=".\directions.h"
+					>
+				</File>
+				<File
+					RelativePath=".\timer.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="player"
 				>
-			</File>
-			<File
-				RelativePath=".\point.h"
-				>
-			</File>
-			<File
-				RelativePath=".\sprite.h"
-				>
-			</File>
+				<File
+					RelativePath=".\sprite.h"
+					>
+				</File>
+				<File
+					RelativePath=".\tank.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"

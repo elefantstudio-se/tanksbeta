@@ -1,14 +1,8 @@
-class box
+#include "map_object.h"
+
+class box : public map_object
 {
-
-public:	
-	BITMAP *bmp;
-
-	int x;
-	int y;
-	int xmax;
-	int ymax;
-
-private:
-
+public:
+	box();
+	box(BITMAP *bmp);
 };
