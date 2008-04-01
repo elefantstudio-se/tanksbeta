@@ -210,7 +210,7 @@ BuildCmd=
 [Unit17]
 FileName=..\timer.h
 CompileCpp=1
-Folder=
+Folder=headers/misc
 Compile=1
 Link=1
 Priority=1000

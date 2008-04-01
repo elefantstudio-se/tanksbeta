@@ -112,10 +112,13 @@ int main() {
 	
 
 			// set cannon direction
-			tank_cannon.angle = atan2(((mouse_y-10) - player1.y), ((mouse_x-10) - player1.x))* (40.764331210)+70;
+			//tank_cannon.angle = atan2(  ((mouse_y-10) - player1.y), (((mouse_x-10) - player1.x) * (40.764331210) + 70));
+			
+			tank_cannon.angle = atan2(((mouse_y-10) - player1.y), ((mouse_x-10) - player1.x)) * (40.764331210)+70;
 		
-//			blit(bg.bmp, buffer,0,0,0,0,screen_w,screen_h);
-
+			//blit(bg.bmp, buffer,0,0,0,0,screen_w,screen_h);
+			
+				
 			bg.draw(buffer, 0, 0);
 			player1.draw(buffer);
 			tank_cannon.draw(buffer, player1.x, player1.y);
@@ -126,6 +129,9 @@ int main() {
 			#ifdef DEBUG
 				textprintf(buffer, font, 0, 10, makecol(255, 255, 255),  "x: %.0i", player1.x);
 				textprintf(buffer, font, 50, 10, makecol(255, 255, 255),  "y: %.0i", player1.y);
+				//textprintf(buffer, font, 0, 40, makecol(255, 255, 255),  "Angle: %.0d", tank_cannon.angle);
+				//textprintf(buffer, font, 0, 20, makecol(255, 255, 255),  "MouseX: %d", mouse_x);
+				//textprintf(buffer, font, 0, 30, makecol(255, 255, 255),  "MouseY: %d", mouse_y);
 			#endif
 
 			didticks++;
