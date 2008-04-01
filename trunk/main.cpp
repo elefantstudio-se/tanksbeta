@@ -27,8 +27,10 @@ int main() {
 	
 	//create objects of class sprite
 	tank player1 = tank(load_bmp("tank_body_yellow.bmp", NULL));
+	player1.turret.bmp = load_bmp("tank_cannon.bmp", NULL);
+	player1.turret.ammo_graphic = load_bmp("block.bmp", NULL);
+	player1.turret.current_bullet = 0;
 	
-	sprite tank_cannon = sprite(load_bmp("tank_cannon.bmp", NULL));
 	sprite crosshair = sprite(load_bmp("crosshair.bmp", NULL));
 	sprite bg = sprite(load_bmp("bg.bmp", 0));
 	box block = box(load_bmp("block.bmp", NULL));
@@ -109,36 +111,36 @@ int main() {
 				player1.move_x(-3);
 			}
 			
+			else if(mouse_b & 1) {
+				player1.turret.fire();
+			}
+			
 	
 
-			// set cannon direction
-			//tank_cannon.angle = atan2(  ((mouse_y-10) - player1.y), (((mouse_x-10) - player1.x) * (40.764331210) + 70));
-			
-			tank_cannon.angle = atan2(((mouse_y-10) - player1.y), ((mouse_x-10) - player1.x)) * (40.764331210)+70;
+			// set cannon direction			
+			player1.turret.angle = atan2(((mouse_y-10) - player1.y), ((mouse_x-10) - player1.x)) * (40.764331210)+70;
 		
 			//blit(bg.bmp, buffer,0,0,0,0,screen_w,screen_h);
 			
 				
 			bg.draw(buffer, 0, 0);
+			
 			player1.draw(buffer);
-			tank_cannon.draw(buffer, player1.x, player1.y);
+			
 			block.draw(buffer);
 			crosshair.draw(buffer, (mouse_x-10), (mouse_y-10));
 						
-			//print the value of x,y
 			#ifdef DEBUG
 				textprintf(buffer, font, 0, 10, makecol(255, 255, 255),  "x: %.0i", player1.x);
 				textprintf(buffer, font, 50, 10, makecol(255, 255, 255),  "y: %.0i", player1.y);
-				//textprintf(buffer, font, 0, 40, makecol(255, 255, 255),  "Angle: %.0d", tank_cannon.angle);
+				textprintf(buffer, font, 0, 40, makecol(255, 255, 255),  "Bullet Count: %i", player1.turret.current_bullet);
 				//textprintf(buffer, font, 0, 20, makecol(255, 255, 255),  "MouseX: %d", mouse_x);
 				//textprintf(buffer, font, 0, 30, makecol(255, 255, 255),  "MouseY: %d", mouse_y);
 			#endif
 
 			didticks++;
 			
-			if(didticks==60){
-				
-				
+			if(didticks==60) {
 				fps	= frames;
 				didticks = 0;
 				frames =0;

@@ -20,7 +20,7 @@ void sprite::draw(BITMAP *buffer)
 	then just use draw_sprite */
 	
 	//if(this->angle > 0)
-		rotate_sprite(buffer, this->bmp, this->x, this->y, ftofix(this->angle) );
+	rotate_sprite(buffer, this->bmp, this->x, this->y, ftofix(this->angle) );
 
 	//else
 	//	draw_sprite(buffer, this->bmp, this->x, this->y );
@@ -29,7 +29,7 @@ void sprite::draw(BITMAP *buffer)
 void sprite::draw(BITMAP *buffer, int x, int y)
 {
 	//if(this->angle > 0)
-		rotate_sprite(buffer, this->bmp, x, y, ftofix(this->angle) );
+	rotate_sprite(buffer, this->bmp, x, y, ftofix(this->angle) );
 	//else
 	//	draw_sprite(buffer, this->bmp, x, y );	
 }
