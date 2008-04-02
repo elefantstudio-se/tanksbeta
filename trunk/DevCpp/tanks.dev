@@ -2,7 +2,7 @@
 FileName=tanks.dev
 Name=tanks
 UnitCount=22
-Type=1
+Type=0
 Ver=1
 ObjFiles=
 Includes=

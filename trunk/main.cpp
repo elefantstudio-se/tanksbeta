@@ -28,7 +28,8 @@ int main() {
 	//create objects of class sprite
 	tank player1 = tank(load_bmp("tank_body_yellow.bmp", NULL));
 	player1.turret.bmp = load_bmp("tank_cannon.bmp", NULL);
-	player1.turret.ammo_graphic = load_bmp("block.bmp", NULL);
+	player1.turret.ammo_graphic = load_bmp("tank_missle.bmp", NULL);
+
 	player1.turret.current_bullet = 0;
 	
 	sprite crosshair = sprite(load_bmp("crosshair.bmp", NULL));
@@ -111,7 +112,7 @@ int main() {
 				player1.move_x(-3);
 			}
 			
-			else if(mouse_b & 1) {
+			if(mouse_b & 1) {
 				player1.turret.fire();
 			}
 			
@@ -134,8 +135,7 @@ int main() {
 				textprintf(buffer, font, 0, 10, makecol(255, 255, 255),  "x: %.0i", player1.x);
 				textprintf(buffer, font, 50, 10, makecol(255, 255, 255),  "y: %.0i", player1.y);
 				textprintf(buffer, font, 0, 40, makecol(255, 255, 255),  "Bullet Count: %i", player1.turret.current_bullet);
-				//textprintf(buffer, font, 0, 20, makecol(255, 255, 255),  "MouseX: %d", mouse_x);
-				//textprintf(buffer, font, 0, 30, makecol(255, 255, 255),  "MouseY: %d", mouse_y);
+				textprintf(buffer, font, 0, 50, makecol(255, 255, 255), "sizeof(bullets): %i", sizeof(player1.turret.bullets));
 			#endif
 
 			didticks++;
