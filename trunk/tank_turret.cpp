@@ -2,22 +2,20 @@
 #include "allegro.h"
 #include <iostream>
 
-tank_turret::tank_turret()
+tank_turret::tank_turret() : max_bullets(100)
 {
-	for(int i=0; i < max_bullets; i++)
-	{
-		bullet tmpbullet;
-		tmpbullet.visible = false;
-		tmpbullet.x = 0;
-		tmpbullet.y = 0;
-		tmpbullet.bmp = this->ammo_graphic;
-		
-		bullets[i] = tmpbullet;
-	}
+	
+}
+
+tank_turret::~tank_turret()
+{
+	
 }
 
 void tank_turret::fire()
 {
+	std::cout << "max_bullets: " << max_bullets << "\n";
+	
 	if( this->current_bullet == max_bullets )
 		return; // Play out of ammo click noise?
 	
@@ -28,38 +26,20 @@ void tank_turret::fire()
 	tmpbullet.visible = true;
 	tmpbullet.angle = this->angle;
 	
-	
-	/*BITMAP *buffer = tmpbullet.bmp;
-	
-	rectfill(buffer, 0, 0, 50, 50, 255);
-	rectfill(tmpbullet.bmp, 0, 0, 50, 50, 255);
-	
-	rotate_sprite(buffer, this->ammo_graphic, 0, 0, ftofix(tmpbullet.angle) );
-	tmpbullet.bmp = buffer;
-	*/
-	
-	bullets[current_bullet] = tmpbullet;
+	bullets.push_back(tmpbullet);
 	
 	current_bullet++;
 }
 
 void tank_turret::update_bullets(BITMAP *buffer)
 {
-	//std::cout << "current_bullet: " << current_bullet;
-	//std::cout << "bullets[0
-	//system("CLS");
 	
-		
-	for(int i=0; i < max_bullets; i++ )
+	std::vector<bullet>::iterator iter;
+	
+	for ( iter = bullets.begin(); iter != bullets.end(); ++iter )
 	{
-	//	std::cout << "bullets[i].visible: " << bullets[i].visible << "\n";
-		
-		//if( bullets[i].bmp == this->ammo_graphic )
-			//std::cout << "LOLTEST!\n";
-		
-		if(bullets[i].visible == false)
-			continue;
-		
-		bullets[i].draw(buffer);
+		bullet new_bullet = *iter;
+		new_bullet.draw(buffer);
 	}
+	
 }

@@ -119,7 +119,7 @@ int main() {
 	
 
 			// set cannon direction			
-			player1.turret.angle = atan2(((mouse_y-10) - player1.y), ((mouse_x-10) - player1.x)) * (40.764331210)+70;
+			player1.turret.angle = atan2(((mouse_y-10) - player1.y), ((mouse_x-10) - player1.x)) * (40.764331210) + 70;
 		
 			//blit(bg.bmp, buffer,0,0,0,0,screen_w,screen_h);
 			
@@ -133,9 +133,9 @@ int main() {
 						
 			#ifdef DEBUG
 				textprintf(buffer, font, 0, 10, makecol(255, 255, 255),  "x: %.0i", player1.x);
-				textprintf(buffer, font, 50, 10, makecol(255, 255, 255),  "y: %.0i", player1.y);
+				textprintf(buffer, font, 55, 10, makecol(255, 255, 255),  "y: %.0i", player1.y);
 				textprintf(buffer, font, 0, 40, makecol(255, 255, 255),  "Bullet Count: %i", player1.turret.current_bullet);
-				textprintf(buffer, font, 0, 50, makecol(255, 255, 255), "sizeof(bullets): %i", sizeof(player1.turret.bullets));
+				textprintf(buffer, font, 0, 50, makecol(255, 255, 255), "sizeof(bullets): %i", player1.turret.n_bullets.size());
 			#endif
 
 			didticks++;
@@ -150,7 +150,7 @@ int main() {
 
 		acquire_screen();
 		#ifdef DEBUG
-			textprintf(buffer, font, 100, 10, makecol(255, 255, 255),  "FPS: %i", fps);
+			textprintf(buffer, font, 110, 10, makecol(255, 255, 255),  "FPS: %i", fps);
 		#endif
 		blit(buffer, screen, 0, 0, 0, 0, screen_w, screen_h);
 		release_screen();
