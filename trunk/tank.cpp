@@ -37,14 +37,17 @@ void tank::draw(BITMAP *buffer)
 	rotate_sprite(buffer, this->bmp, this->x, this->y, ftofix(this->angle) );
 	rotate_sprite(buffer, this->turret.bmp, this->x, this->y, ftofix(this->turret.angle) );
 	
+	this->turret.x = this->x;
+	this->turret.y = this->y;
+
 	this->turret.update_bullets(buffer);
+	
 }
 
 void tank::draw(BITMAP *buffer, int x, int y)
 {
 	rotate_sprite(buffer, this->bmp, x, y, ftofix(this->angle) );
 	rotate_sprite(buffer, this->turret.bmp, x, y, ftofix(this->turret.angle) );
-
+	
 	this->turret.update_bullets(buffer);
 }
-

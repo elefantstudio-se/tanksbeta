@@ -1,3 +1,10 @@
+/*|--------------------------------------|*/
+/*|            Table Tanks               |*/
+/*|    By Jason Spafford and Hamzeh      |*/
+/*|--------------------------------------|*/
+/*|             04/02/08                 |*/
+/*|--------------------------------------|*/
+
 #include <math.h> 
 #include "allegro.h"
 #include "box.h"
@@ -6,8 +13,6 @@
 
 #define DEBUG
 
-/* */
-/* */
 void allegro_initialize();
 
 const int screen_w = 1024;
@@ -53,8 +58,7 @@ int main() {
 	int frames = 0;
 	int fps = 0;
 	int didticks = 0;
-
-		
+	int ticksrecord = 0;
 
 	while(!key[KEY_ESC]) {
 
@@ -126,6 +130,7 @@ int main() {
 				
 			bg.draw(buffer, 0, 0);
 			
+			player1.turret.current_ticks = ticksrecord;
 			player1.draw(buffer);
 			
 			block.draw(buffer);
@@ -135,10 +140,17 @@ int main() {
 				textprintf(buffer, font, 0, 10, makecol(255, 255, 255),  "x: %.0i", player1.x);
 				textprintf(buffer, font, 55, 10, makecol(255, 255, 255),  "y: %.0i", player1.y);
 				textprintf(buffer, font, 0, 40, makecol(255, 255, 255),  "Bullet Count: %i", player1.turret.current_bullet);
-				textprintf(buffer, font, 0, 50, makecol(255, 255, 255), "sizeof(bullets): %i", player1.turret.n_bullets.size());
+				textprintf(buffer, font, 0, 50, makecol(255, 255, 255), "sizeof(bullets): %i", player1.turret.bullets.size());
+				textprintf(buffer, font, 0, 60, makecol(255, 255, 255), "angle(turret): %f", player1.turret.angle );
+				textprintf(buffer, font, 0, 70, makecol(255, 255, 255), "ticksrecord: %i" , ticksrecord);
+				
+				textprintf(buffer, font, 0, 80, makecol(255, 255, 255), "current_ticks: %i", player1.turret.current_ticks);
+				textprintf(buffer, font, 0, 90, makecol(255, 255, 255), "ticks: %i", player1.turret.ticks);
+				textprintf(buffer, font, 0, 100, makecol(255, 255, 255), "Difference: %i", player1.turret.current_ticks - player1.turret.ticks);
 			#endif
 
 			didticks++;
+			ticksrecord++;
 			
 			if(didticks==60) {
 				fps	= frames;

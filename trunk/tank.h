@@ -15,5 +15,6 @@ public:
 	void draw(BITMAP *buffer);
 	void draw(BITMAP *buffer, int x, int y);
 	
+	int ticks;
 	int direction;
 };

@@ -13,11 +13,17 @@ public:
 	
 	void fire();
 	void update_bullets(BITMAP *buffer);
+	void setTicks( int new_ticks );
 	
 	BITMAP *ammo_graphic;
 	
 	int ammo;
 	int current_bullet;
+	
+	int ticks;
+	int cooldown;
+	int fire_speed;
+	int current_ticks;
 	
 	const int max_bullets;
 	
