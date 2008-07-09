@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hamzeh\Documents\Visual Studio 2005\Projects\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bg.xnb</Output>
+      <Output>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bg.xnb</Output>
       <Time>2008-07-07T09:43:48.3562-05:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hamzeh\Documents\Visual Studio 2005\Projects\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\tank_body_yellow.xnb</Output>
+      <Output>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\tank_body_yellow.xnb</Output>
       <Time>2008-07-07T09:43:48.3592-05:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hamzeh\Documents\Visual Studio 2005\Projects\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\tank_cannon.xnb</Output>
+      <Output>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\tank_cannon.xnb</Output>
       <Time>2008-07-07T09:43:48.3602-05:00</Time>
     </Item>
     <Item>
@@ -34,17 +34,26 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hamzeh\Documents\Visual Studio 2005\Projects\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\tank_missle.xnb</Output>
+      <Output>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\tank_missle.xnb</Output>
       <Time>2008-07-07T09:43:48.3622-05:00</Time>
+    </Item>
+    <Item>
+      <Source>crosshair.bmp</Source>
+      <Name>crosshair</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\crosshair.xnb</Output>
+      <Time>2008-07-08T22:22:25.102-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
-      <RootDirectory>C:\Users\Hamzeh\Documents\Visual Studio 2005\Projects\WindowsGame1\WindowsGame1\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Hamzeh\Documents\Visual Studio 2005\Projects\WindowsGame1\WindowsGame1\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Hamzeh\Documents\Visual Studio 2005\Projects\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Hamzeh\Documents\Visual Studio 2005\Projects\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Hamzeh\Desktop\C# tanks\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

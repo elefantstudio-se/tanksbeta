@@ -16,6 +16,8 @@ namespace WindowsGame1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        MouseState mouseState;
+        Texture2D crosshair;
 
         Tank tank = new Tank(100,100,Color.White);
         //Tank tank2 = new Tank(200,100,Color.White);
@@ -40,6 +42,9 @@ namespace WindowsGame1
             spriteBatch = new SpriteBatch(GraphicsDevice);
             tank.bodyTexture = Content.Load<Texture2D>("tank_body_yellow");
             tank.cannonTexture = Content.Load<Texture2D>("tank_cannon");
+            crosshair = Content.Load<Texture2D>("crosshair");
+  
+            
             //tank2.bodyTexture = Content.Load<Texture2D>("tank_body_yellow");
         }
 
@@ -52,9 +57,9 @@ namespace WindowsGame1
         
         protected override void Update(GameTime gameTime)
         {
-            tank.move(Keys.Up, Keys.Down, Keys.Right, Keys.Left);
+            tank.move(Keys.W, Keys.S, Keys.D, Keys.A);
 
-            MouseState mouseState = Mouse.GetState();
+            mouseState = Mouse.GetState();
 
             //tank2.move(Keys.W, Keys.S, Keys.D, Keys.A);
             base.Update(gameTime);
@@ -67,6 +72,7 @@ namespace WindowsGame1
             spriteBatch.Begin();
             tank.draw(spriteBatch);
         //tank2.draw(spriteBatch);
+            spriteBatch.Draw(crosshair,new Vector2(mouseState.X-10,mouseState.Y-10), Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);

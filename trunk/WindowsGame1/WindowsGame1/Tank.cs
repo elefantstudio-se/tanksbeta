@@ -22,7 +22,7 @@ namespace WindowsGame1
         public Vector2 bodyOrigin;
         public Color color;
 
-        public float cannonAngle;
+        public double cannonAngle;
         public float bodyAngle;
         public float speed;
        
@@ -40,7 +40,7 @@ namespace WindowsGame1
         public void draw(SpriteBatch spritebatch)
         {
             spritebatch.Draw(bodyTexture, cordinate, null, color ,bodyAngle * 0.0174444444444f, bodyOrigin, 1.0f, SpriteEffects.None, 0.0f);
-            spritebatch.Draw(cannonTexture, new Vector2( cordinate.X,cordinate.Y), null, color, cannonAngle * 0.0174444444444f, cannonOrigin, 1.0f, SpriteEffects.None, 0.0f);
+            spritebatch.Draw(cannonTexture, new Vector2(cordinate.X, cordinate.Y), null, color, (float)(cannonAngle+1.570795), cannonOrigin, 1.0f, SpriteEffects.None, 0.0f);
         }
 
         public void move(Keys up, Keys down, Keys right, Keys left)
@@ -96,17 +96,14 @@ namespace WindowsGame1
                 bodyAngle = 270;
             }
 
-
-            MouseState mouseState = Mouse.GetState();
-            cordinate.X = mouseState.X;
-
+            cannon_angle();
         }
 
         void cannon_angle()
         { 
             MouseState mouseState = Mouse.GetState();
 
-            cannonAngle = Math.Atan2(Convert.ToDouble( mouseState.Y - (cordinate.Y + cannonOrigin.Y)), Convert.ToDouble(mouseState.X - (cordinate.X + cannonOrigin.X)));
+            cannonAngle = Math.Atan2(mouseState.Y - (cordinate.Y),mouseState.X - (cordinate.X));
         
         }
 
