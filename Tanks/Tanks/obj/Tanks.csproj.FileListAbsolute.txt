@@ -23,3 +23,16 @@ C:\Users\Hamzeh\Desktop\Temp\Tanks C#\Tanks\Tanks\bin\x86\Debug\Content\ch1.xnb
 C:\Users\Hamzeh\Desktop\Temp\Tanks C#\Tanks\Tanks\bin\x86\Debug\Content\tank.xnb
 C:\Users\Hamzeh\Desktop\Temp\Tanks C#\Tanks\Tanks\bin\x86\Debug\Content\tankccc.xnb
 C:\Users\Hamzeh\Desktop\Temp\Tanks C#\Tanks\Tanks\bin\x86\Debug\Content\tankk.xnb
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\bin\x86\Debug\Content\Background.xnb
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\bin\x86\Debug\Content\Bullet.xnb
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\bin\x86\Debug\Content\ch1.xnb
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\bin\x86\Debug\Content\tank.xnb
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\bin\x86\Debug\Content\tankccc.xnb
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\bin\x86\Debug\Content\tankk.xnb
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\bin\x86\Debug\Tanks.exe
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\bin\x86\Debug\Tanks.pdb
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\obj\x86\Debug\Tanks.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\obj\x86\Debug\Tanks.exe
+C:\Users\Hamzeh\Desktop\Temp\New Folder\Tanks\Tanks\obj\x86\Debug\Tanks.pdb
