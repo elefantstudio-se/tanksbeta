@@ -16,10 +16,12 @@ namespace Tanks
 
         public Vector2 position;
         public Vector2 velocity;
+        public Texture2D bullet_image;
+
         bool alive;
         MouseState mouseState;
 
-        Bullet () 
+        public Bullet () 
         {
 
             velocity = Vector2.Zero;
@@ -34,22 +36,26 @@ namespace Tanks
             if (alive)
             {
                 position += velocity;
+
+
             }
             else if (mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
-                fire_bullet(angle,cordinate);
+                if (!alive)
+                {
+                    velocity = new Vector2(
+                                (float)Math.Cos(angle),
+                                (float)Math.Sin(angle)) * 5.0f;
+                    position = new Vector2(cordinate.X - 4, cordinate.Y - 4);
+
+                    alive = true;
+                }  
             }
         }
 
-        void fire_bullet(Double angle, Vector2 cordinate)
+        public void draw_bullet()
         {
-            if (!alive)
-            {
-                velocity = new Vector2(
-                            (float)Math.Cos(angle),
-                            (float)Math.Sin(angle)) * 5.0f;
-                position = new Vector2(cordinate.X - 4, cordinate.Y - 4);
-            }         
+            Game1.spriteBatch.Draw(bullet_image, position, Color.White);
         }
 
 
