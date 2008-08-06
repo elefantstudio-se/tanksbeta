@@ -14,48 +14,30 @@ namespace Tanks
     class Bullet
     {
 
-        public Vector2 position;
-        public Vector2 velocity;
+        private Vector2 position;
+        private Vector2 velocity;
+        private float angle;
         public Texture2D bullet_image;
+        Vector2 origin;
 
-        bool alive;
-        MouseState mouseState;
-
-        public Bullet () 
+        public Bullet(float angle, Vector2 position, Vector2 velocity) 
         {
+            this.position = position;
+            this.velocity = velocity;
+            this.angle = angle;
+            this.bullet_image = Game1.bullet;
 
-            velocity = Vector2.Zero;
-            position = Vector2.Zero;
-            alive = false;
+            origin = new Vector2(this.bullet_image.Width / 2, this.bullet_image.Height / 2);
         }
 
-        public void update_bullet(Double angle,Vector2 cordinate)
+        public void Update()
         {
-            mouseState = Mouse.GetState();
-
-            if (alive)
-            {
-                position += velocity;
-
-
-            }
-            else if (mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
-            {
-                if (!alive)
-                {
-                    velocity = new Vector2(
-                                (float)Math.Cos(angle),
-                                (float)Math.Sin(angle)) * 5.0f;
-                    position = new Vector2(cordinate.X - 4, cordinate.Y - 4);
-
-                    alive = true;
-                }  
-            }
+            this.position += this.velocity;
         }
 
-        public void draw_bullet()
+        public void Draw()
         {
-            Game1.spriteBatch.Draw(bullet_image, position, Color.White);
+            Game1.spriteBatch.Draw(this.bullet_image, this.position, null, Color.White, this.angle, this.origin, 1.0f, SpriteEffects.None, 0.0f);
         }
 
 

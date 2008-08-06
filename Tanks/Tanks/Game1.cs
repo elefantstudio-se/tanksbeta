@@ -27,7 +27,6 @@ namespace Tanks
         Texture2D background;
         Tank tank;
 
-        int[] num = new int[50];
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -53,17 +52,15 @@ namespace Tanks
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            bullet = Content.Load<Texture2D>("Bullet");
+
             tank = new Tank(new Vector2(100,100), Color.White, 
                 Content.Load<Texture2D>("Tankk"), 
                 Content.Load<Texture2D>("TankCcc"),
                 Keys.W, Keys.S , Keys.D , Keys.A );
+
             crosshair = Content.Load<Texture2D>("ch1");
             background = Content.Load<Texture2D>("Background");
-            
-
-
-
+            bullet = Content.Load<Texture2D>("Bullet");
         }
 
         
@@ -82,7 +79,7 @@ namespace Tanks
                 this.Exit();
             }
             
-            tank.move();
+            tank.Move();
             base.Update(gameTime);
         }
 
@@ -91,9 +88,11 @@ namespace Tanks
         {
             graphics.GraphicsDevice.Clear(Color.Gray);
             spriteBatch.Begin();
+
             spriteBatch.Draw(background, new Vector2(0, 0), Color.White);
-            tank.draw();
+            tank.Draw();
             spriteBatch.Draw(crosshair, new Vector2(mouseState.X-16, mouseState.Y-16), Color.White);           
+
             spriteBatch.End();
             base.Draw(gameTime);
         }
